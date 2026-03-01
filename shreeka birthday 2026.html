@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Shreeka!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom,
+       #fff8f0,
+        #ffe5d9);
+      color: #5a3e36;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      animation: float 3s infinite alternate;
+    }
+
+    header h2 {
+      font-size: 2em;
+      margin-top: 0;
+    }
+
+    .message p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .gallery img {
+  width: 250px;      
+  height: 250px;      
+  object-fit: cover; 
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Birthday, Shreeka!</h1>
+  </header>
+
+  <section class="message">
+    <p>Wishing you endless joy, love, and laughter on your special day.</p>
+    <p>May this year bring you closer to your dreams and surround you with happiness.</p>
+    <p>I wish you a best of luck for your exams </p>
+    <p> I didnt have best pictures of us so i kept these please dont mind ok naaa</p>
+  </section>
+
+  <section class="gallery">
+    <h3>Photo of our memories</h3>
+    <div class="photos" id="photoGallery">
+      <img src="IMG-20220710-WA0011.jpg" alt="Smiling with balloons">
+      <img src="IMG_20250417_165815_438.jpg" alt="Birthday cake moment">
+      <img src="IMG_20250604_183406_931.jpg" alt="Laughing outdoors">
+    </div>
+  <script>
+ ]
+
+    const photoUpload = document.getElementById('photoUpload');
+    const photoGallery = document.getElementById('photoGallery');
+
+    photoUpload.addEventListener('change', (event) => {
+      const files = event.target.files;
+      for (let file of files) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.alt = "Uploaded photo";
+          photoGallery.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+      window.addEventListener('load', () => {
+    const audio = document.querySelector('audio');
+    audio.play().catch(() => {
+      console.log("Autoplay blocked. Audio will start after user interaction.");
+    });
+  });
+  </script>
+</body>
+</html>
